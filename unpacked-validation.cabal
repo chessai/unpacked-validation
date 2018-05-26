@@ -2,16 +2,9 @@
 
 name:                unpacked-validation
 version:             0.1.0.0
-synopsis:            An unpacked either data type
-description:
-  This module is intended to be a drop-in replacement for Either. To shave off pointer chasing, it uses '-XUnboxedSums' to represent the Either type as two machine words that are contiguous in memory, without loss of expressiveness that Either provides.
-  .
-  This library provides pattern synonyms Left and Right that allow users to pattern match on an Unpacked Either in a familiar way.
-  .
-  Functions are also provided for converting an Unpacked Either to the base library's Either, and vice versa.
-  .
-  This library is in alpha, and the internals are likely to change.
-homepage:            https://github.com/chessai/unpacked-either
+synopsis:            An unpacked validation data type
+description:         FIXME
+homepage:            https://github.com/chessai/unpacked-validation
 license:             BSD3
 license-file:        LICENSE
 author:              chessai
@@ -32,12 +25,12 @@ library
 
 -------------------------------------------------------------------------------
 
-test-suite unpacked-either-test
+test-suite unpacked-validation-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Main.hs
   build-depends:       base
-                     , unpacked-either
+                     , unpacked-validation
                      , QuickCheck
                      , quickcheck-classes
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N -O2
@@ -47,6 +40,6 @@ test-suite unpacked-either-test
 
 source-repository head
   type:     git
-  location: https://github.com/chessai/unpacked-either
+  location: https://github.com/chessai/unpacked-validation
 
 --------------------------------------------------------------------------------
